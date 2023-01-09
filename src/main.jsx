@@ -1,44 +1,25 @@
 import React from 'react'
-import Button from './component/Button'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
+import CharaterList from './component/CharaterList'
 
 
-const Hello = (props) => {
-  return(
-      <>
-        <div>From {props.from} !!
-        <Button className="avatar" text="點我"/></div>
-      </>
-    )
-}
 
 const charaters = [
-  {name:'Wu',age: 26, id:1},
-  {name:'Lim',age:27, id: 2},
-  {name:'Wang',age:24, id:3},
+  {name:'WU',age: 26, id:1},
+  {name:'LIM',age:27, id: 2},
+  {name:'WANG',age:24, id:3},
 ];
 
 //這邊可以拆成一個模組，帶入Props 
-const CharaterList = (props) => {
-  let listItems = props.charaters.map(i =>
-      <li key={i.id}>
-        Name:{i.name} Age: {i.age}
-       </li>
-  )
 
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  )
-      
+const App = () => { 
+ return(
+ <div className='flex flex-col h-full mx-auto  w-full '>
+  <CharaterList charaters={charaters}/>
+ </div>)
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(CharaterList, charaters, null)
-
-/**
- 也可以 root.render(Hello, {from : 'TW'}, null)
-*/
+root.render(<App />)
