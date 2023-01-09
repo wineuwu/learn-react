@@ -5,8 +5,8 @@ const CharaterList = (props) => {
        </li>
   )
   return (
-    <section className="h-auto bg-gray-100 w-full py-4">
-      <h2 className='text-xl text-bold px-2'># Practice Render List</h2>
+    <section className="h-auto space-y-4 bg-gray-100 w-full py-4">
+      <h2 className='text-center text-xl px-2 text-gray-600'># Practice Rendering List</h2>
       <ul className='bg-white border  flex flex-col mx-auto w-[360px]'>
         {listItems}
       </ul>

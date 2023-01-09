@@ -1,15 +1,16 @@
-import  imgUrl from '../assets/react.svg'
+import { useState } from 'react';
 
-const myButton = (props) => { 
+const CountButton =(props) => { 
+
+  const [count, setCount] = useState(0);
+  const handleClick = () => setCount(count +1);
+
   return (
-    <>
-    <img src={imgUrl} alt="" />
-    <button className="b-btn">
-      {props.text}
+    <button className="border  rounded-md p-3 w-40 inline-block" onClick={handleClick}>
+      {count}
     </button>
-    </>
   )
 }
 
+export default CountButton ;
 
-export default myButton;
